@@ -13,28 +13,6 @@ Use standard Unix tools:
 	$ unzip docker-machine-driver-scaleway.zip
 	$ sudo cp docker-machine-driver-scaleway /usr/bin
 
-Build from source
------------------
-
-Requirements:
-
-- A working Go environment (see: https://golang.org/doc/code.html)
-- [Golint](https://github.com/golang/lint)
-- [Dep](https://github.com/golang/dep)
-
-Install dependencies
-
-	go get -u github.com/golang/lint/golint
-	go get -u github.com/golang/dep/cmd/dep
-
-Run tests
-
-	$ make test
-
-Run build command
-
-	$ make build
-
 Usage
 -----
 
@@ -74,7 +52,6 @@ Run test commands
 
 ### 4. Options
 
-
 |Option                      |Description               |Default        |required|
 |----------------------------|--------------------------|---------------|--------|
 |`--scaleway-ssh-user`       |SSH username              |`root`         |no      |
@@ -91,6 +68,27 @@ Run test commands
 |`--scaleway-volumes`        |Add an additional volume  |`none`         |no      |
 |`--scaleway-tags`           |Add tags                  |`none`         |no      |
 
+Build from source
+-----------------
+
+Requirements:
+
+- A working Go environment (see: https://golang.org/doc/code.html)
+- [Golint](https://github.com/golang/lint)
+- [Dep](https://github.com/golang/dep)
+
+Install dependencies
+
+	go get -u github.com/golang/lint/golint
+	go get -u github.com/golang/dep/cmd/dep
+
+Run tests
+
+	$ make test
+
+Run build command
+
+	$ make build
 
 Todo
 ----
