@@ -7,7 +7,7 @@ all: test
 
 build: deps test
 	@echo "+ $@"
-	@go build -ldflags $(LDFLAGS) -o $(NAME) cmd/$(NAME)/main.go
+	@go build -ldflags "$(LDFLAGS)" -o $(NAME) cmd/$(NAME)/main.go
 
 deps:
 	@echo "+ $@"
@@ -27,6 +27,6 @@ test: lint vet
 
 clean:
 	@echo "+ $@"
-	@$(RM) -f $(NAME)
+	@$(RM) -f "$(NAME)"
 
 .PHONY: all build deps lint vet test clean
