@@ -7,7 +7,7 @@ all: test
 
 build: deps test
 	@echo "+ $@"
-	@go build -ldflags "$(LDFLAGS)" -o $(NAME) cmd/$(NAME)/main.go
+	@go build -ldflags "$(LDFLAGS)" -o "$(NAME)" cmd/"$(NAME)"/main.go
 
 deps:
 	@echo "+ $@"
