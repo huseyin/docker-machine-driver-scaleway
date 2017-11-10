@@ -177,8 +177,11 @@ func (d *Driver) PreCreateCheck() error {
 	// Downloading boot2docker to cache should be done here to make sure
 	// that a download failure will not leave a machine half created.
 	b2dutils := mcnutils.NewB2dUtils(d.StorePath)
-	err = b2dutils.UpdateISOCache(d.Boot2DockerURL)
-	return err
+	if err := b2dutils.UpdateISOCache(d.Boot2DockerURL); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (d *Driver) Create() error {

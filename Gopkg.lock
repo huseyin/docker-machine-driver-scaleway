@@ -34,8 +34,8 @@
 [[projects]]
   name = "github.com/docker/machine"
   packages = ["commands/commandstest","libmachine/drivers","libmachine/drivers/plugin","libmachine/drivers/plugin/localbinary","libmachine/drivers/rpc","libmachine/log","libmachine/mcnflag","libmachine/mcnutils","libmachine/ssh","libmachine/state","libmachine/version","version"]
-  revision = "9ba6da9ebd1140b65eb73e1ce08086ca72764c60"
-  version = "v0.13.0"
+  revision = "937160559e02cc430fe176991beb9a6ffbfe3de0"
+  version = "v0.12.2"
 
 [[projects]]
   branch = "master"
@@ -118,6 +118,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "875a4e041792093f0fee30f7904d1879036d1122dc1012ab53519799643cbb43"
+  inputs-digest = "53c771b03b0babf0137a491c737870053b82d269bd238a4cbae2f59469ae4f60"
   solver-name = "gps-cdcl"
   solver-version = 1

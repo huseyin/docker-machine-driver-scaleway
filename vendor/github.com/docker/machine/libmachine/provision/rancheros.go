@@ -136,8 +136,11 @@ func (provisioner *RancherProvisioner) Provision(swarmOptions swarm.Options, aut
 	}
 
 	log.Debugf("Configuring swarm")
-	err := configureSwarm(provisioner, swarmOptions, provisioner.AuthOptions)
-	return err
+	if err := configureSwarm(provisioner, swarmOptions, provisioner.AuthOptions); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (provisioner *RancherProvisioner) SetHostname(hostname string) error {

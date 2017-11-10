@@ -147,6 +147,9 @@ func (provisioner *ArchProvisioner) Provision(swarmOptions swarm.Options, authOp
 
 	// enable in systemd
 	log.Debug("Enabling docker in systemd")
-	err = provisioner.Service("docker", serviceaction.Enable)
-	return err
+	if err := provisioner.Service("docker", serviceaction.Enable); err != nil {
+		return err
+	}
+
+	return nil
 }

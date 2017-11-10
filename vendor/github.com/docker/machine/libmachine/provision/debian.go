@@ -138,6 +138,9 @@ func (provisioner *DebianProvisioner) Provision(swarmOptions swarm.Options, auth
 
 	// enable in systemd
 	log.Debug("enabling docker in systemd")
-	err = provisioner.Service("docker", serviceaction.Enable)
-	return err
+	if err := provisioner.Service("docker", serviceaction.Enable); err != nil {
+		return err
+	}
+
+	return nil
 }

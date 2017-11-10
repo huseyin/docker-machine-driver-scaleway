@@ -14,7 +14,7 @@ import (
 	"github.com/docker/machine/libmachine/mcnflag"
 	"github.com/docker/machine/libmachine/mcnutils"
 	"github.com/docker/machine/libmachine/state"
-	"github.com/exoscale/egoscale"
+	"github.com/pyr/egoscale/src/egoscale"
 )
 
 type Driver struct {
@@ -154,9 +154,10 @@ func (d *Driver) SetConfigFromFlags(flags drivers.DriverOptions) error {
 	}
 	d.SecurityGroup = strings.Join(securityGroups, ",")
 	affinityGroups := flags.StringSlice("exoscale-affinity-group")
-	if len(affinityGroups) > 0 {
-		d.AffinityGroup = strings.Join(affinityGroups, ",")
+	if len(affinityGroups) == 0 {
+		affinityGroups = []string{"docker-machine"}
 	}
+	d.AffinityGroup = strings.Join(affinityGroups, ",")
 	d.AvailabilityZone = flags.String("exoscale-availability-zone")
 	d.SSHUser = flags.String("exoscale-ssh-user")
 	d.UserDataFile = flags.String("exoscale-userdata")
@@ -454,8 +455,10 @@ func (d *Driver) Remove() error {
 	if err != nil {
 		return err
 	}
-	err = d.waitForJob(client, dvmresp)
-	return err
+	if err = d.waitForJob(client, dvmresp); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (d *Driver) jobIsDone(client *egoscale.Client, jobid string) (bool, error) {
