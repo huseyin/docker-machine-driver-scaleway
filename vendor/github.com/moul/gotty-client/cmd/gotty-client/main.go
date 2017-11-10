@@ -7,7 +7,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"github.com/codegangsta/cli"
 	"github.com/moul/gotty-client"
 )

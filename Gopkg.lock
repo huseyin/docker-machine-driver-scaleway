@@ -8,7 +8,7 @@
   revision = "d6e3b3328b783f23731bc4d058875b0371ff8109"
 
 [[projects]]
-  name = "github.com/Sirupsen/logrus"
+  name = "github.com/sirupsen/logrus"
   packages = ["."]
   revision = "f006c2ac4710855cf0f916dd6b77acf6b048dc6e"
   version = "v1.0.3"
@@ -41,7 +41,7 @@
   branch = "master"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
-  revision = "6d15c0ae71e55ed645c21ac4945aaadbc0e9a590"
+  revision = "0b19b17f90333e44518aa31bbf8126017960aee3"
 
 [[projects]]
   name = "github.com/gorilla/websocket"

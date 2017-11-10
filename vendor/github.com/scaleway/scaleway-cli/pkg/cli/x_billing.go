@@ -11,7 +11,7 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"github.com/docker/go-units"
 	"github.com/scaleway/scaleway-cli/pkg/commands"
 	"github.com/scaleway/scaleway-cli/pkg/pricing"
