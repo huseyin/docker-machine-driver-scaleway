@@ -1,4 +1,4 @@
-Docker Machine Scaleway Driver [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1b42b4d98f5c420da72f87d16889ba37)](https://www.codacy.com/app/huseyin/docker-machine-driver-scaleway?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=huseyin/docker-machine-driver-scaleway&amp;utm_campaign=Badge_Grade)
+Docker Machine Scaleway Driver [![Build Status](https://travis-ci.org/huseyin/docker-machine-driver-scaleway.svg?branch=master)](https://travis-ci.org/huseyin/docker-machine-driver-scaleway) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1b42b4d98f5c420da72f87d16889ba37)](https://www.codacy.com/app/huseyin/docker-machine-driver-scaleway?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=huseyin/docker-machine-driver-scaleway&amp;utm_campaign=Badge_Grade)
 ==============================
 
 Docker Machine Scaleway Driver is a driver plugin for Docker machine. It allows
