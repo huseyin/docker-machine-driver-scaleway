@@ -9,7 +9,7 @@ Installation
 
 Use standard Unix tools:
 
-	$ wget -O docker-machine-driver-scaleway.zip https://...
+	$ wget -O docker-machine-driver-scaleway.zip https://github.com/huseyin/docker-machine-driver-scaleway/releases/download/v0.1.1/docker-machine-driver-scaleway.zip
 	$ unzip docker-machine-driver-scaleway.zip
 	$ sudo cp docker-machine-driver-scaleway /usr/bin
 
