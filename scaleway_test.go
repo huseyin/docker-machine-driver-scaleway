@@ -22,9 +22,9 @@ const (
 	testServerName     = "scw-server"
 	testCommercialType = "VC1M"
 	testImage          = "scw-image"
-	testRegion         = "scw1"
+	testRegion         = "ams1"
 	testReservedIPID   = "bcdf8013-c01f-4897-bd3c-14f5d44321e4"
-	testIPPersistent   = true
+	testPersistentIP   = true
 	testEnableIPv6     = true
 	testVolumes        = "100G"
 	testTags           = "foo,bar,baz"
@@ -43,7 +43,7 @@ var d = func() *Driver {
 			"scaleway-image":           testImage,
 			"scaleway-region":          testRegion,
 			"scaleway-reserved-ip-id":  testReservedIPID,
-			"scaleway-ip-persistent":   testIPPersistent,
+			"scaleway-persistent-ip":   testPersistentIP,
 			"scaleway-enable-ipv6":     testEnableIPv6,
 			"scaleway-volumes":         testVolumes,
 			"scaleway-tags":            testTags,
@@ -108,8 +108,8 @@ func TestScalewayConfigs(t *testing.T) {
 		t.Errorf("Expecting '%s', got '%s'\n", testReservedIPID, d.IPID)
 	}
 
-	if testIPPersistent != d.IPPersistent {
-		t.Errorf("Expecting '%v', got '%v'\n", testIPPersistent, d.IPPersistent)
+	if testPersistentIP != d.PersistentIP {
+		t.Errorf("Expecting '%v', got '%v'\n", testPersistentIP, d.PersistentIP)
 	}
 
 	if testEnableIPv6 != d.EnableIPv6 {
@@ -120,7 +120,12 @@ func TestScalewayConfigs(t *testing.T) {
 		t.Errorf("Expecting '%s', got '%s'\n", testVolumes, d.Volumes)
 	}
 
-	actualTags := strings.Replace(d.getTags(), " ", ",", -1)
+	c, err := newClient(d)
+	if err != nil {
+		t.Error(err)
+	}
+
+	actualTags := strings.Replace(c.tags(), " ", ",", -1)
 	if !strings.Contains(actualTags, testTags) {
 		t.Errorf("Expecting '%s', got '%s'\n", testTags, actualTags)
 	}
