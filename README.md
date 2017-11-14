@@ -63,7 +63,7 @@ Run test commands
 |`--scaleway-image`          |Image                     |`ubuntu-xenial`|no      |
 |`--scaleway-region`         |Region                    |`ams1`         |no      |
 |`--scaleway-reserved-ip-id` |Use an existing IP adress |`none`         |no      |
-|`--scaleway-ip-persistent`  |IP persistent             |`false`        |no      |
+|`--scaleway-persistent-ip`  |IP persistent             |`false`        |no      |
 |`--scaleway-enable-ipv6`    |Enable IPv6               |`false`        |no      |
 |`--scaleway-volumes`        |Add an additional volume  |`none`         |no      |
 |`--scaleway-tags`           |Add tags                  |`none`         |no      |
