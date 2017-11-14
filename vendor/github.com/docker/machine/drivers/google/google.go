@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"net"
+	"net/http"
 	"strings"
 
 	"github.com/docker/machine/libmachine/drivers"
@@ -11,6 +12,8 @@ import (
 	"github.com/docker/machine/libmachine/mcnflag"
 	"github.com/docker/machine/libmachine/ssh"
 	"github.com/docker/machine/libmachine/state"
+
+	"google.golang.org/api/googleapi"
 )
 
 // Driver is a struct compatible with the docker.hosts.drivers.Driver interface.
@@ -38,7 +41,7 @@ const (
 	defaultZone        = "us-central1-a"
 	defaultUser        = "docker-user"
 	defaultMachineType = "n1-standard-1"
-	defaultImageName   = "ubuntu-os-cloud/global/images/ubuntu-1604-xenial-v20161130"
+	defaultImageName   = "ubuntu-os-cloud/global/images/ubuntu-1604-xenial-v20170721"
 	defaultScopes      = "https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write"
 	defaultDiskType    = "pd-standard"
 	defaultDiskSize    = 10
@@ -396,7 +399,15 @@ func (d *Driver) Remove() error {
 	}
 
 	if err := c.deleteInstance(); err != nil {
-		return err
+		googleErr, ok := err.(*googleapi.Error)
+		if !ok {
+			return err
+		}
+		if googleErr.Code == http.StatusNotFound {
+			log.Warn("Remote instance does not exist, proceeding with removing local reference")
+		} else {
+			return err
+		}
 	}
 
 	return c.deleteDisk()

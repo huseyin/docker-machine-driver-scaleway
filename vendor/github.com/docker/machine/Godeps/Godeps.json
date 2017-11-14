@@ -326,8 +326,8 @@
 			"Rev": "792786c7400a136282c1664665ae0a8db921c6c2"
 		},
 		{
-			"ImportPath": "github.com/pyr/egoscale/src/egoscale",
-			"Rev": "987e683a7552f34ee586217d1cc8507d52e80ab9"
+			"ImportPath": "github.com/exoscale/egoscale",
+			"Rev": "325740036187ddae3a5b74be00fbbc70011c4d96"
 		},
 		{
 			"ImportPath": "github.com/rackspace/gophercloud",

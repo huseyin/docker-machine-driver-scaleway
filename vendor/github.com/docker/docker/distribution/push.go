@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/docker/docker/distribution/metadata"
 	"github.com/docker/docker/pkg/progress"
 	"github.com/docker/docker/reference"

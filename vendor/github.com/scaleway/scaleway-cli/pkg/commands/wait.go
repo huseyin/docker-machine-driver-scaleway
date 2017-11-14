@@ -7,7 +7,7 @@ package commands
 import (
 	"fmt"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/scaleway/scaleway-cli/pkg/api"
 )
 

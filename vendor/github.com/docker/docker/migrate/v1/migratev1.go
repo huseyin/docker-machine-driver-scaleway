@@ -13,7 +13,7 @@ import (
 
 	"encoding/json"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/docker/distribution/digest"
 	"github.com/docker/docker/distribution/metadata"
 	"github.com/docker/docker/image"

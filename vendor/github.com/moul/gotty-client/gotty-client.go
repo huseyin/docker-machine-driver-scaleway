@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/creack/goselect"
 	"github.com/gorilla/websocket"
 	"golang.org/x/crypto/ssh/terminal"

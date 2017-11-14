@@ -21,7 +21,7 @@ import (
 	"github.com/docker/docker/reference"
 	"github.com/gorilla/mux"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 )
 
 var (

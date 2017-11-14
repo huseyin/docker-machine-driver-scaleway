@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	flag "github.com/docker/docker/pkg/mflag"
 
 	version "github.com/hashicorp/go-version"

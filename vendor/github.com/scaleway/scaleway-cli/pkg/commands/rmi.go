@@ -7,7 +7,7 @@ package commands
 import (
 	"fmt"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 )
 
 // RmiArgs are flags for the `RunRmi` function

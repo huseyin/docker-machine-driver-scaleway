@@ -12,7 +12,7 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/docker/go-units"
 	"github.com/renstrom/fuzzysearch/fuzzy"
 	"github.com/scaleway/scaleway-cli/pkg/api"

@@ -7,7 +7,7 @@ import (
 	"io"
 	"text/template"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/docker/docker/cli"
 	"github.com/docker/docker/utils/templates"
 )

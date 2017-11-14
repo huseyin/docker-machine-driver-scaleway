@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/moul/http2curl"
 	"github.com/scaleway/scaleway-cli/pkg/api"
 )

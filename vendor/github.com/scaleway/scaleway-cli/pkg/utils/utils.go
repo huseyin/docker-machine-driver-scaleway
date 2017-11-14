@@ -24,8 +24,8 @@ import (
 
 	"golang.org/x/crypto/ssh"
 
-	"github.com/sirupsen/logrus"
-	log "github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
+	log "github.com/Sirupsen/logrus"
 	"github.com/mattn/go-isatty"
 	"github.com/moul/gotty-client"
 	"github.com/scaleway/scaleway-cli/pkg/sshcommand"

@@ -11,7 +11,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/cloudflare/cfssl/log"
 	"github.com/docker/docker/container"
 	"github.com/docker/docker/daemon/links"
